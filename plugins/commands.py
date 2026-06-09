@@ -3,6 +3,7 @@ import logging
 import random
 from Script import script
 from pyrogram import Client, filters
+from pyrogram.enums import ChatAction
 from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details
@@ -45,7 +46,7 @@ async def start(client, message):
             InlineKeyboardButton('🧿 About 🧿', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_chat_action("typing")
+        await message.reply_chat_action(ChatAction.TYPING)
         await message.reply_photo(
             photo=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention),
