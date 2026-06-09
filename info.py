@@ -12,17 +12,17 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ['API_ID'])
-API_HASH = environ['API_HASH']
-BOT_TOKEN = environ['BOT_TOKEN']
+API_ID = int(environ['API_ID 15554219'])
+API_HASH = environ['API_HASH f7e1e318df2bfa9ba39b14e34c43fb4c']
+BOT_TOKEN = environ['BOT_TOKEN 8687635506:AAE_9kztD3xGiWwRli5sMaNHt-bD_5GnhGE']
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS'].split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS 1463212098'].split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS -1003909147235 @NRXfilmsgroup'].split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
@@ -30,8 +30,8 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
 TUTORIAL = "t.me/MainlandGroup_CC"
 # MongoDB information
-DATABASE_URI = environ['DATABASE_URI']
-DATABASE_NAME = environ['DATABASE_NAME']
+DATABASE_URI = environ['DATABASE_URI mongodb+srv://lucifer5a515:R1gqgzTBtuBqChPi@projectz.kk4kir3.mongodb.net/?appName=Projectz']
+DATABASE_NAME = environ['DATABASE_NAME lucifer5a515']
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
@@ -55,7 +55,7 @@ default_start_cap = """
 """
 
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1004298873390'))
 PICS = (environ.get('PICS', 'https://te.legra.ph/file/621f2c6491c0de7a31019.jpg https://te.legra.ph/file/749366baf5aa3261c5388.jpg https://te.legra.ph/file/bf6f3b0c90ac817fa5f48.jpg https://te.legra.ph/file/9c66d7fd10190ec8cc8b0.jpg https://te.legra.ph/file/2a0f093fd8fe39dd3c68c.jpg https://te.legra.ph/file/b98c5844bb601c722ca70.jpg')).split()
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'MaX_Bots_Support')
 IMDB = eval((environ.get('IMDB', "True")))
