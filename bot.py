@@ -11,6 +11,8 @@ from database.ia_filterdb import Media
 from database.users_chats_db import db
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN
 from utils import temp
+from keep_alive import keep_alive
+
 
 class Bot(Client):
 
@@ -29,17 +31,23 @@ class Bot(Client):
         b_users, b_chats = await db.get_banned()
         temp.BANNED_USERS = b_users
         temp.BANNED_CHATS = b_chats
+
         await super().start()
         await Media.ensure_indexes()
+
         me = await self.get_me()
         temp.ME = me.id
         temp.U_NAME = me.username
         self.username = '@' + me.username
-        print(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
+
+        print(f"{me.first_name} with Pyrogram v{__version__} (Layer {layer}) started.")
 
     async def stop(self, *args):
         await super().stop()
         print("Bot stopped. Bye.")
+
+
+keep_alive()
 
 app = Bot()
 app.run()
