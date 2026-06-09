@@ -3,7 +3,7 @@ import logging
 import random
 from Script import script
 from pyrogram import Client, filters
-from pyrogram.enums import ChatAction
+from pyrogram.enums import ChatAction, ParseMode
 from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details
