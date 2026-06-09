@@ -7,6 +7,7 @@ from pyrogram.types import (
 )
 
 from pyrogram import Client
+from pyrogram.enums import ChatAction
 from translations import Messages as tr
 
 def map_btns(pos):
@@ -32,7 +33,7 @@ def map_btns(pos):
     & Filters.command("help")
 )
 async def _help(c: Client, m: Message):
-    await m.reply_chat_action("typing")
+    await m.reply_chat_action(ChatAction.TYPING)
     await m.reply_text(
         text=tr.HELP_MSG[1],
         reply_markup=InlineKeyboardMarkup(map_btns(1)),
